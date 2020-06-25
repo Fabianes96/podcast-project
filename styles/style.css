@@ -24,17 +24,49 @@ body {
   header .menu {
     float: right;
   }
+  header .menu nav {
+    position: absolute;
+    text-align: left;
+    display: none;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    height: 224px;
+    background: #0000EC 100%;
+  }
+  header .menu nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100%;
+  }
+  header .menu nav li {
+    padding-left: 16px;
+    letter-spacing: 0;
+    line-height: 28px;
+    display: block;
+    list-style: none;
+    color: #FFFFFF;
+    font-family: 'IBMPlexMono', monospace;
+    font-size: 16px;
+  }
   header .menu #checkbox-hack {
     width: 18px;
     height: 12px;
     z-index: 10;
     position: absolute;
-    right: 5.9%;
+    right: 1rem;
     top: 16px;
     opacity: 0;
   }
   header .menu #checkbox-hack:checked ~ .menu-bar.primer-linea {
-    /* Cuando el checkbox este checked, agarramos a menu-bar primer-linea */
+    /* Cuando el checkbox este checked, se agarra a menu-bar primer-linea */
     -webkit-transform: rotate(45deg);
             transform: rotate(45deg);
     -webkit-transform-origin: 0% 0%;
@@ -57,26 +89,18 @@ body {
     right: 0.8rem;
     margin-bottom: 4px;
   }
-  header .menu nav {
-    float: none;
-    text-align: center;
-    display: none;
-  }
-  header .menu nav li {
-    line-height: 40px;
+  header .menu #checkbox-hack:checked ~ nav {
     display: block;
-    border: 1px solid black;
-    background: white;
   }
   header .menu .menu-bar {
     position: relative;
     width: 18px;
     height: 2px;
     background-color: black;
-    margin-bottom: 3px;
     z-index: 1;
     top: 16px;
     right: 1rem;
+    margin-bottom: 3px;
   }
 }
 /*# sourceMappingURL=style.css.map */

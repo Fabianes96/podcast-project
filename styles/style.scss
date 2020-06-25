@@ -7,11 +7,13 @@ body {
 }
 @media screen and (max-width: 500px) {
   header {
+    //Se define el tamaño de la cabecera
     width: 100%;
     height: 44px;
     top: 0;
     left: 0;
     img {
+      //Posiciona la imagen del logo en el lugar deseado
       position: relative;
       width: 24px;
       height: 24px;
@@ -19,21 +21,58 @@ body {
       left: 16px;
     }
     .menu {
-      float: right;
+      //Menú flotante a la derecha
+      float: right;      
+      nav {
+        //El navbar tiene posición absoluta para ubicarse justo donde la cabecera termina
+        position: absolute;
+        //Alinea el contenido a la izquierda
+        text-align: left;
+        //Oculta el cuadro y sus items
+        display: none;        
+        //Ubicación, tamaño y color deseado
+        top:44px;        
+        left :0;
+        width: 100%;
+        height: 224px;
+        background: #0000EC 100%;
+      }
+      nav ul{
+        //Display flex para ubicar los elementos del navbar
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+      }
+      nav li {
+        padding-left: 16px;
+        letter-spacing: 0;
+        line-height: 28px;
+        display: block;        
+        list-style: none;                
+        color:#FFFFFF;
+        font-family: 'IBMPlexMono', monospace;  
+        font-size: 16px;  
+      }
       #checkbox-hack {
+        //Tamaño del checkbox
         width: 18px;
         height: 12px;
+        //Estará por ubicado por encima en el eje z
         z-index: 10;
+        //Ubicación deseada
         position: absolute;
-        right: 5.9%;
+        right: 1rem;
         top: 16px;
+        //Oculta el checkbox
         opacity: 0;
       }
       #checkbox-hack:checked {
         & ~ .menu-bar.primer-linea {
-          /* Cuando el checkbox este checked, agarramos a menu-bar primer-linea */
+          /* Cuando el checkbox este checked, se agarra a menu-bar primer-linea */
           transform: rotate(45deg);
           transform-origin: 0% 0%;
+          //Ubicación nueva
           right: 0.8rem;
           margin-bottom: 4px;
         }
@@ -42,6 +81,7 @@ body {
         & ~ .menu-bar.segunda-linea {
           /* Cuando el checkbox este checked, agarramos a menu-bar segunda-linea */
           opacity: 0;
+          //Ubicación nueva
           right: 0.8rem;
           margin-bottom: 4px;
         }
@@ -51,30 +91,29 @@ body {
           /* Cuando el checkbox este checked, agarramos a menu-bar tercer-linea */
           transform: rotate(-45deg);
           transform-origin: 0% 100%;
+          //Ubicación nueva
           right: 0.8rem;
           margin-bottom: 4px;
         }
       }
-      nav {
-        float: none;
-        text-align: center;
-        display: none;
-      }
-      nav li {
-        line-height: 40px;
-        display: block;
-        border: 1px solid black;
-        background: white;
+      #checkbox-hack:checked {
+        & ~ nav {
+          //Cuando está en checked se muestra el menú hambueguesa
+          display: block;
+        }
       }
       .menu-bar {
+        //Dibuja el menú hamburguesa
+        //Posición y tamaño deseados
         position: relative;
         width: 18px;
         height: 2px;
-        background-color: black;
-        margin-bottom: 3px;
+        background-color: black;        
         z-index: 1;
         top: 16px;
         right: 1rem;
+        //Separación de las lineas
+        margin-bottom: 3px;
       }
     }
   }
