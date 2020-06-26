@@ -22,22 +22,23 @@ body {
     }
     .menu {
       //Menú flotante a la derecha
-      float: right;      
+      float: right;
       nav {
         //El navbar tiene posición absoluta para ubicarse justo donde la cabecera termina
         position: absolute;
         //Alinea el contenido a la izquierda
         text-align: left;
         //Oculta el cuadro y sus items
-        display: none;        
+        display: none;
         //Ubicación, tamaño y color deseado
-        top:44px;        
-        left :0;
+        top: 44px;
+        left: 0;
         width: 100%;
         height: 224px;
-        background: #0000EC 100%;
+        z-index: 100;
+        background: #0000ec 100%;
       }
-      nav ul{
+      nav ul {
         //Display flex para ubicar los elementos del navbar
         display: flex;
         flex-direction: column;
@@ -48,11 +49,11 @@ body {
         padding-left: 16px;
         letter-spacing: 0;
         line-height: 28px;
-        display: block;        
-        list-style: none;                
-        color:#FFFFFF;
-        font-family: 'IBMPlexMono', monospace;  
-        font-size: 16px;  
+        display: block;
+        list-style: none;
+        color: #ffffff;
+        font-family: "IBMPlexMono", monospace;
+        font-size: 16px;
       }
       #checkbox-hack {
         //Tamaño del checkbox
@@ -108,13 +109,52 @@ body {
         position: relative;
         width: 18px;
         height: 2px;
-        background-color: black;        
+        background-color: black;
         z-index: 1;
         top: 16px;
         right: 1rem;
         //Separación de las lineas
         margin-bottom: 3px;
       }
+    }
+  }
+  main {    
+    .initial {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      left: 16px;
+      padding-right: 2rem;
+      top: 29px;
+      h1 {
+        font-family: "IBM Plex Sans";
+        font-size: 36px;
+        color: #060a24;
+        letter-spacing: 0;
+        line-height: 42px;
+        font-weight: normal;
+      }
+      p {
+        margin-top: 14px;
+        font-family: "IBMPlexMono", monospace;
+        font-size: 14px;
+        color: #060a24;
+        letter-spacing: 0;
+        line-height: 22px;
+      }      
+    }
+    .btn-podcast{
+      margin-top: 36px;
+      font-family: "IBMPlexMono-Medium", monospace;
+      color: #060A24 100%;
+      height: 48px;
+      background:  #00F3BB 100%;
+      border:0
+    }
+    .btn-podcast:hover{
+      background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
+      color: #FFFFFF;
+      cursor: pointer;
     }
   }
   //   header{
