@@ -118,12 +118,12 @@ body {
       }
     }
   }
-  main {    
+  main {
     .initial {
       display: flex;
       flex-direction: column;
       position: relative;
-      left: 16px;
+      padding-left: 16px;
       padding-right: 2rem;
       top: 29px;
       h1 {
@@ -141,20 +141,50 @@ body {
         color: #060a24;
         letter-spacing: 0;
         line-height: 22px;
-      }      
+      }
     }
-    .btn-podcast{
+    .btn-podcast {
       margin-top: 36px;
       font-family: "IBMPlexMono-Medium", monospace;
-      color: #060A24 100%;
+      color: #060a24 100%;
       height: 48px;
-      background:  #00F3BB 100%;
-      border:0
+      background: #00f3bb 100%;
+      border: 0;
     }
-    .btn-podcast:hover{
-      background-image: linear-gradient(225deg, #0000FE 0%, #00F0B8 100%);
-      color: #FFFFFF;
+    .btn-podcast:hover {
+      background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+      color: #ffffff;
       cursor: pointer;
+    }
+    .podcasts {
+      position: relative;
+      top: 52px;
+      background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+      clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
+      h1 {
+        font-family: "IBM Plex Sans";
+        font-size: 36px;
+        color: #ffffff;
+        letter-spacing: 0;
+        line-height: 42px;
+        padding: 70px 16px 19px;
+      }
+      .iframes {
+        display: grid;
+        justify-content: center;
+        gap: 11px;
+        padding: 19px 0 10em;
+      }
+    }
+    .cel{
+      position: relative;
+      display: flex;
+      justify-content: center;
+      bottom: 4em;
+      img{
+        width: 360px;
+        height: 519px;
+      }
     }
   }
   //   header{
