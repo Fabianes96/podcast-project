@@ -1,1 +1,272 @@
-/* No CSS *//*# sourceMappingURL=style.css.map */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+
+h1 {
+  font-size: 36px;
+  color: #060a24;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: normal;
+}
+
+h2 {
+  font-size: 24px;
+  color: #060a24;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+p {
+  margin-top: 14px;
+  font-family: "IBMPlexMono", monospace;
+  font-size: 14px;
+  color: #060a24;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+
+@media screen and (max-width: 500px) {
+  header {
+    width: 100%;
+    height: 44px;
+    top: 0;
+    left: 0;
+  }
+  header img {
+    position: relative;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+    left: 16px;
+  }
+  header .menu {
+    float: right;
+  }
+  header .menu nav {
+    position: absolute;
+    text-align: left;
+    display: none;
+    top: 44px;
+    left: 0;
+    width: 100%;
+    height: 224px;
+    z-index: 100;
+    background: #0000ec 100%;
+  }
+  header .menu nav ul {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-pack: distribute;
+        justify-content: space-around;
+    height: 100%;
+  }
+  header .menu nav li {
+    padding-left: 16px;
+    letter-spacing: 0;
+    line-height: 28px;
+    display: block;
+    list-style: none;
+    color: #ffffff;
+    font-family: "IBMPlexMono", monospace;
+    font-size: 16px;
+  }
+  header .menu #checkbox-hack {
+    width: 18px;
+    height: 12px;
+    z-index: 10;
+    position: absolute;
+    right: 1rem;
+    top: 16px;
+    opacity: 0;
+  }
+  header .menu #checkbox-hack:checked ~ .menu-bar.primer-linea {
+    /* Cuando el checkbox este checked, se agarra a menu-bar primer-linea */
+    -webkit-transform: rotate(45deg);
+            transform: rotate(45deg);
+    -webkit-transform-origin: 0% 0%;
+            transform-origin: 0% 0%;
+    right: 0.8rem;
+    margin-bottom: 4px;
+  }
+  header .menu #checkbox-hack:checked ~ .menu-bar.segunda-linea {
+    /* Cuando el checkbox este checked, agarramos a menu-bar segunda-linea */
+    opacity: 0;
+    right: 0.8rem;
+    margin-bottom: 4px;
+  }
+  header .menu #checkbox-hack:checked ~ .menu-bar.tercer-linea {
+    /* Cuando el checkbox este checked, agarramos a menu-bar tercer-linea */
+    -webkit-transform: rotate(-45deg);
+            transform: rotate(-45deg);
+    -webkit-transform-origin: 0% 100%;
+            transform-origin: 0% 100%;
+    right: 0.8rem;
+    margin-bottom: 4px;
+  }
+  header .menu #checkbox-hack:checked ~ nav {
+    display: block;
+  }
+  header .menu .menu-bar {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background-color: black;
+    z-index: 1;
+    top: 16px;
+    right: 1rem;
+    margin-bottom: 3px;
+  }
+  main .initial {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 1rem;
+    top: 29px;
+  }
+  main .btn-podcast {
+    margin-top: 36px;
+    font-family: "IBMPlexMono-Medium", monospace;
+    color: #060a24 100%;
+    height: 48px;
+    background: #00f3bb 100%;
+    border: 0;
+  }
+  main .btn-podcast:hover {
+    background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+    color: #ffffff;
+    cursor: pointer;
+  }
+  main .podcasts {
+    position: relative;
+    top: 52px;
+    background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+    -webkit-clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
+            clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
+  }
+  main .podcasts h1 {
+    color: #ffffff;
+    padding: 70px 16px 19px;
+  }
+  main .podcasts .iframes {
+    display: -ms-grid;
+    display: grid;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    gap: 11px;
+    padding: 19px 0 10em;
+  }
+  main .cel {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    bottom: 3em;
+  }
+  main .cel img {
+    width: 360px;
+    height: 519px;
+  }
+  main .ddv {
+    padding: 0 16px 0px 16px;
+  }
+  main .invitados h1 {
+    padding-left: 16px;
+    margin: 54px 0 14px 0;
+  }
+  main .invitados img {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  main .temas h1 {
+    padding-left: 16px;
+    margin: 48px 0 48px 0;
+  }
+  main .temas .iconos {
+    display: -ms-grid;
+    display: grid;
+    justify-items: center;
+  }
+  main .temas .iconos h2:nth-child(2n) {
+    width: 100%;
+    margin: 13px 0 50px 0;
+  }
+  main .novedades {
+    width: 100%;
+    height: 341px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+    -webkit-clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
+            clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
+  }
+  main .novedades .info-novedades {
+    -ms-flex-item-align: center;
+        align-self: center;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    position: relative;
+    padding-left: 16px;
+    padding-right: 1rem;
+  }
+  main .novedades .info-novedades h1 {
+    font-size: 36px;
+    color: #ffffff;
+    letter-spacing: 0;
+    line-height: 42px;
+    font-weight: normal;
+    text-align: center;
+  }
+  main footer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  main footer .iconos {
+    margin-top: 16px;
+    margin-bottom: 32px;
+    width: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,5 +1,251 @@
-// body{
-//     font-family: 'IBM Plex Mono', monospace;
-//     font-family: 'IBM Plex Sans', sans-serif;
-
-// }
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "IBM Plex Sans", sans-serif;
+}
+@mixin titulos($color) {
+  font-size: 36px;
+  color: $color;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: normal;
+}
+@mixin info() {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding-left: 16px;
+  padding-right: 1rem;
+}
+h1 {
+  @include titulos(#060a24);
+}
+h2 {
+  font-size: 24px;
+  color: #060a24;
+  letter-spacing: 0;
+  text-align: center;
+}
+p {
+  margin-top: 14px;
+  font-family: "IBMPlexMono", monospace;
+  font-size: 14px;
+  color: #060a24;
+  letter-spacing: 0;
+  line-height: 22px;
+}
+@media screen and (max-width: 500px) {
+  header {
+    //Se define el tamaño de la cabecera
+    width: 100%;
+    height: 44px;
+    top: 0;
+    left: 0;
+    img {
+      //Posiciona la imagen del logo en el lugar deseado
+      position: relative;
+      width: 24px;
+      height: 24px;
+      top: 10px;
+      left: 16px;
+    }
+    .menu {
+      //Menú flotante a la derecha
+      float: right;
+      nav {
+        //El navbar tiene posición absoluta para ubicarse justo donde la cabecera termina
+        position: absolute;
+        //Alinea el contenido a la izquierda
+        text-align: left;
+        //Oculta el cuadro y sus items
+        display: none;
+        //Ubicación, tamaño y color deseado
+        top: 44px;
+        left: 0;
+        width: 100%;
+        height: 224px;
+        z-index: 100;
+        background: #0000ec 100%;
+      }
+      nav ul {
+        //Display flex para ubicar los elementos del navbar
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 100%;
+      }
+      nav li {
+        padding-left: 16px;
+        letter-spacing: 0;
+        line-height: 28px;
+        display: block;
+        list-style: none;
+        color: #ffffff;
+        font-family: "IBMPlexMono", monospace;
+        font-size: 16px;
+      }
+      #checkbox-hack {
+        //Tamaño del checkbox
+        width: 18px;
+        height: 12px;
+        //Estará por ubicado por encima en el eje z
+        z-index: 10;
+        //Ubicación deseada
+        position: absolute;
+        right: 1rem;
+        top: 16px;
+        //Oculta el checkbox
+        opacity: 0;
+      }
+      #checkbox-hack:checked {
+        & ~ .menu-bar.primer-linea {
+          /* Cuando el checkbox este checked, se agarra a menu-bar primer-linea */
+          transform: rotate(45deg);
+          transform-origin: 0% 0%;
+          //Ubicación nueva
+          right: 0.8rem;
+          margin-bottom: 4px;
+        }
+      }
+      #checkbox-hack:checked {
+        & ~ .menu-bar.segunda-linea {
+          /* Cuando el checkbox este checked, agarramos a menu-bar segunda-linea */
+          opacity: 0;
+          //Ubicación nueva
+          right: 0.8rem;
+          margin-bottom: 4px;
+        }
+      }
+      #checkbox-hack:checked {
+        & ~ .menu-bar.tercer-linea {
+          /* Cuando el checkbox este checked, agarramos a menu-bar tercer-linea */
+          transform: rotate(-45deg);
+          transform-origin: 0% 100%;
+          //Ubicación nueva
+          right: 0.8rem;
+          margin-bottom: 4px;
+        }
+      }
+      #checkbox-hack:checked {
+        & ~ nav {
+          //Cuando está en checked se muestra el menú hambueguesa
+          display: block;
+        }
+      }
+      .menu-bar {
+        //Dibuja el menú hamburguesa
+        //Posición y tamaño deseados
+        position: relative;
+        width: 18px;
+        height: 2px;
+        background-color: black;
+        z-index: 1;
+        top: 16px;
+        right: 1rem;
+        //Separación de las lineas
+        margin-bottom: 3px;
+      }
+    }
+  }
+  main {
+    .initial {
+      @include info();
+      top: 29px;
+    }
+    .btn-podcast {
+      margin-top: 36px;
+      font-family: "IBMPlexMono-Medium", monospace;
+      color: #060a24 100%;
+      height: 48px;
+      background: #00f3bb 100%;
+      border: 0;
+    }
+    .btn-podcast:hover {
+      background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+      color: #ffffff;
+      cursor: pointer;
+    }
+    .podcasts {
+      position: relative;
+      top: 52px;
+      background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+      clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
+      h1 {
+        color: #ffffff;
+        padding: 70px 16px 19px;
+      }
+      .iframes {
+        display: grid;
+        justify-content: center;
+        gap: 11px;
+        padding: 19px 0 10em;
+      }
+    }
+    .cel {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      bottom: 3em;
+      img {
+        width: 360px;
+        height: 519px;
+      }
+    }
+    .ddv {
+      padding: 0 16px 0px 16px;
+    }
+    .invitados {
+      h1 {
+        padding-left: 16px;
+        margin: 54px 0 14px 0;
+      }
+      img {
+        width: 100%;
+        display: flex;
+      }
+    }
+    .temas {
+      h1 {
+        padding-left: 16px;
+        margin: 48px 0 48px 0;
+      }
+      .iconos {
+        display: grid;
+        justify-items: center;
+        & h2:nth-child(2n) {
+          width: 100%;
+          margin: 13px 0 50px 0;
+        }
+      }
+    }
+    .novedades {
+      width: 100%;
+      height: 341px;
+      display: flex;
+      background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+      clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
+      .info-novedades {
+        align-self: center;
+        @include info();
+        h1 {
+          @include titulos(#ffffff);
+          text-align: center;
+        }
+      }
+    }
+    footer {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      .iconos {
+        margin-top: 16px;
+        margin-bottom: 32px;
+        width: 90%;
+        display: flex;
+        justify-content: space-evenly;
+      }
+    }
+  }
+}
