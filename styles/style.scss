@@ -188,7 +188,7 @@ main{
   }
   .intermedio{
     display: flex;  
-    justify-content: center;  
+    justify-content: space-evenly;  
     .cel{       
       position: relative;       
       bottom: 50px;       
@@ -201,9 +201,9 @@ main{
     .ddv{
       align-self: center;
       position: relative;
-      bottom: 30px;      
-      
-      right: 15px;
+      bottom: 30px;            
+      right: 3em;
+      padding-left: 16px;
       width: 464px;
       h1{
         @include titulos(rgba(6,10,36,1), 48px)
@@ -213,8 +213,25 @@ main{
         line-height: 24px;
       }
     }
+  }  
+  .invitados{
+    h1{
+      @include titulos(rgba(6,10,36,1), 48px);
+      width: 481px;
+      position: relative;
+      left: 200px;
+      margin-bottom: 36px;
+    }
+    .imagenes{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);      
+      img{
+        width: 100%;
+        height: auto;        
+      }
+    }
+
   }
-  
 }
 
 @media screen and (max-width: 775px) {
@@ -415,18 +432,21 @@ main{
         right: 0;        
         width: auto;
       }
-
-    }
-    
+    }    
     .invitados {
       h1 {
+        font-size: 36px;
         padding-left: 16px;
         margin: 54px 0 14px 0;
+        position: static;
       }
-      img {
-        width: 100%;
-        display: flex;
+      .imagenes{
+        display: block;        
+        img {          
+          display: flex;          
+        }
       }
+      
     }
     .temas {
       h1 {

@@ -216,9 +216,9 @@ main .intermedio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 main .intermedio .cel {
@@ -238,7 +238,8 @@ main .intermedio .ddv {
       align-self: center;
   position: relative;
   bottom: 30px;
-  right: 15px;
+  right: 3em;
+  padding-left: 16px;
   width: 464px;
 }
 
@@ -253,6 +254,30 @@ main .intermedio .ddv h1 {
 main .intermedio .ddv p {
   font-size: 16px;
   line-height: 24px;
+}
+
+main .invitados h1 {
+  font-size: 48px;
+  color: #060a24;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: normal;
+  width: 481px;
+  position: relative;
+  left: 200px;
+  margin-bottom: 36px;
+}
+
+main .invitados .imagenes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+}
+
+main .invitados .imagenes img {
+  width: 100%;
+  height: auto;
 }
 
 @media screen and (max-width: 775px) {
@@ -462,11 +487,15 @@ main .intermedio .ddv p {
     font-size: 36px;
   }
   main .invitados h1 {
+    font-size: 36px;
     padding-left: 16px;
     margin: 54px 0 14px 0;
+    position: static;
   }
-  main .invitados img {
-    width: 100%;
+  main .invitados .imagenes {
+    display: block;
+  }
+  main .invitados .imagenes img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
