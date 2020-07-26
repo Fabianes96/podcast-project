@@ -179,10 +179,10 @@ main .podcasts {
           justify-content: center;
   top: 150px;
   width: 100%;
-  height: 1042px;
+  height: 1043px;
   background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
-  -webkit-clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 13%);
-          clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 13%);
+  -webkit-clip-path: polygon(100% 0, 100% 89%, 0 100%, 0 11%);
+          clip-path: polygon(100% 0, 100% 89%, 0 100%, 0 11%);
 }
 
 main .podcasts h1 {
@@ -191,8 +191,9 @@ main .podcasts h1 {
   letter-spacing: 0;
   line-height: 42px;
   font-weight: normal;
+  position: relative;
+  bottom: 5rem;
   padding-left: 200px;
-  margin-bottom: 26px;
 }
 
 main .podcasts .iframes {
@@ -200,8 +201,10 @@ main .podcasts .iframes {
   display: grid;
   -ms-grid-columns: (1fr)[2];
       grid-template-columns: repeat(2, 1fr);
-  gap: 5em;
+  gap: 4em;
   justify-items: center;
+  position: relative;
+  bottom: 2rem;
   padding: 0 100px 0 100px;
 }
 
@@ -209,7 +212,50 @@ main .podcasts .iframes iframe {
   width: 100%;
 }
 
-@media screen and (max-width: 768px) {
+main .intermedio {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .intermedio .cel {
+  position: relative;
+  bottom: 50px;
+}
+
+main .intermedio .cel img {
+  width: inherit;
+  width: 458px;
+  height: 660px;
+}
+
+main .intermedio .ddv {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  position: relative;
+  bottom: 30px;
+  right: 15px;
+  width: 464px;
+}
+
+main .intermedio .ddv h1 {
+  font-size: 48px;
+  color: #060a24;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: normal;
+}
+
+main .intermedio .ddv p {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@media screen and (max-width: 775px) {
   header {
     width: 100%;
     height: 44px;
@@ -347,16 +393,23 @@ main .podcasts .iframes iframe {
     display: none;
   }
   main .podcasts {
+    display: block;
     position: relative;
     top: 52px;
     background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
     -webkit-clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
             clip-path: polygon(100% 0, 100% 97%, 0 100%, 0 3%);
+    height: auto;
   }
   main .podcasts h1 {
+    font-size: 36px;
     color: #ffffff;
+    letter-spacing: 0;
+    line-height: 42px;
+    font-weight: normal;
     padding: 70px 16px 19px;
     margin-left: 0px;
+    bottom: 0;
   }
   main .podcasts .iframes {
     -ms-grid-columns: 1fr;
@@ -367,6 +420,7 @@ main .podcasts .iframes iframe {
     justify-items: auto;
     gap: 11px;
     padding: 19px 0 10em;
+    bottom: 0;
   }
   main .podcasts .iframes iframe {
     width: 400px;
@@ -374,14 +428,17 @@ main .podcasts .iframes iframe {
   }
 }
 
-@media screen and (max-width: 768px) and (max-width: 460px) {
+@media screen and (max-width: 775px) and (max-width: 460px) {
   main .podcasts .iframes iframe {
     width: 298px;
   }
 }
 
-@media screen and (max-width: 768px) {
-  main .cel {
+@media screen and (max-width: 775px) {
+  main .intermedio {
+    display: block;
+  }
+  main .intermedio .cel {
     position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -391,12 +448,18 @@ main .podcasts .iframes iframe {
             justify-content: center;
     bottom: 3em;
   }
-  main .cel img {
+  main .intermedio .cel img {
     width: 360px;
     height: 519px;
   }
-  main .ddv {
+  main .intermedio .ddv {
+    position: static;
     padding: 0 16px 0px 16px;
+    right: 0;
+    width: auto;
+  }
+  main .intermedio .ddv h1 {
+    font-size: 36px;
   }
   main .invitados h1 {
     padding-left: 16px;
