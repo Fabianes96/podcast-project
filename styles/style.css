@@ -75,11 +75,25 @@ header .menu nav ul {
 
 header .menu nav ul li {
   list-style: none;
+}
+
+header .menu nav ul li a {
+  text-decoration: none;
   font-size: 16px;
   color: #060A24;
   letter-spacing: 0;
   line-height: 28px;
   padding-left: 48px;
+}
+
+header .menu nav ul li:target a {
+  color: rgba(6, 10, 36, 0.56);
+  text-decoration: line-through;
+}
+
+header .menu nav ul li:hover a {
+  color: #00F3BB;
+  text-decoration: line-through;
 }
 
 @media screen and (max-width: 750px) {
@@ -122,15 +136,21 @@ header .menu nav ul li {
         justify-content: space-around;
     height: 100%;
   }
-  header .menu nav li {
+  header .menu nav ul li {
     padding-left: 16px;
-    letter-spacing: 0;
-    line-height: 28px;
     display: block;
     list-style: none;
+  }
+  header .menu nav ul li a {
+    letter-spacing: 0;
+    line-height: 28px;
     color: #ffffff;
     font-family: "IBMPlexMono", monospace;
     font-size: 16px;
+  }
+  header .menu nav ul li:target a {
+    text-decoration: none;
+    color: #ffffff;
   }
   header .menu #checkbox-hack {
     display: block;
