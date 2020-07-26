@@ -3,24 +3,22 @@
   padding: 0;
 }
 body {
+
   font-family: "IBM Plex Sans", sans-serif;
 }
-@mixin titulos($color) {
-  font-size: 36px;
+@mixin titulos($color, $size) {
+  font-size: $size;
   color: $color;
   letter-spacing: 0;
   line-height: 42px;
   font-weight: normal;
 }
-@mixin info() {
+@mixin info($pl) {
   display: flex;
   flex-direction: column;
   position: relative;
-  padding-left: 16px;
+  padding-left: $pl;
   padding-right: 1rem;
-}
-h1 {
-  @include titulos(#060a24);
 }
 h2 {
   font-size: 24px;
@@ -63,7 +61,7 @@ header {
   height: 80px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  align-items: center;    
   img {
     //Posiciona la imagen del logo en el lugar deseado
     position: relative;     
@@ -109,8 +107,85 @@ header {
     }
   }
 }
+main{  
+  .initial{
+    position: relative;
+    top: 150px;        
+    @include info(200px);
+    align-items: start;    
+    .titles{
+      display: flex;
+      del{
+        padding-right: 1rem;
+      }
+      h1 {
+        @include titulos(rgba(6,10,36,1), 64px);        
+        span{
+          color: rgba(0,0,236,1);        
+        }
+      }
+    }
+    @media screen and (max-width:960px){
+      .titles{
+        display: block;
+      }
+    }
+    #parrafoMobile{
+      display: none;
+    }
+    #parrafoDesktop{
+      display: block;
+      font-size: 16px;
+      line-height: 24px;
+      span{
+        display: block;
+      }
+    }    
+  }  
+  .btn-podcast {
+    margin-top: 56px;
+    width: 226px;
+    height: 56px;
+    font-family: "IBMPlexMono-Medium", monospace;
+    color: #060a24 100%;
+    height: 56px;
+    background: #00f3bb 100%;
+    border: 0;
+  }
+  .btn-podcast:hover {
+    background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+    color: #ffffff;
+    cursor: pointer;
+  }
+  .podcasts{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    top: 150px;    
+    width: 100%;
+    height: 1042px;
+    background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+    clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 13%);
+    h1{
+      @include titulos(#ffffff,48px );
+      padding-left: 200px;
+      margin-bottom: 26px; 
+    }
+      .iframes{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);      
+        gap: 5em;
+        justify-items: center;
+        padding: 0 100px 0 100px;
+        iframe{            
+          width: 100%;
+        }
+      }     
+  }
+}
 
-@media screen and (max-width: 750px) {
+@media screen and (max-width: 768px) {
   header {
     //Se define el tamaño de la cabecera
     width: 100%;
@@ -124,7 +199,7 @@ header {
       height: 24px;
       top: 10px;
       left: 16px;
-    }
+    }    
     .menu {
       //Menú flotante a la derecha
       float: right;
@@ -150,8 +225,7 @@ header {
         justify-content: space-around;
         height: 100%;
       }
-      nav ul {
-        
+      nav ul {        
         li {
           padding-left: 16px;        
           display: block;
@@ -161,7 +235,8 @@ header {
             line-height: 28px;
             color: #ffffff;
             font-family: "IBMPlexMono", monospace;
-            font-size: 16px;             
+            font-size: 16px; 
+            padding-left: 0;           
           }           
         }
         li:target{
@@ -170,9 +245,7 @@ header {
             color: #ffffff;
           }
         }
-      }
-      
-      
+      }  
       #checkbox-hack {
         display: block;
         //Tamaño del checkbox
@@ -239,22 +312,25 @@ header {
   }
   main {
     .initial {
-      @include info();
+      left: 0;
+      align-items: stretch;
+      @include info(16px);
       top: 29px;
-    }
-    .btn-podcast {
-      margin-top: 36px;
-      font-family: "IBMPlexMono-Medium", monospace;
-      color: #060a24 100%;
-      height: 48px;
-      background: #00f3bb 100%;
-      border: 0;
-    }
-    .btn-podcast:hover {
-      background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
-      color: #ffffff;
-      cursor: pointer;
-    }
+      .titles{        
+        h1 {
+          @include titulos(rgba(6,10,36,1), 36px);
+          span{
+            color: inherit;
+          }
+        }
+      }
+      #parrafoMobile{
+        display: block;
+      }
+      #parrafoDesktop{
+        display: none;
+      }      
+    }    
     .podcasts {
       position: relative;
       top: 52px;
@@ -263,13 +339,24 @@ header {
       h1 {
         color: #ffffff;
         padding: 70px 16px 19px;
+        margin-left: 0px;
       }
-      .iframes {
-        display: grid;
+      .iframes {        
+        grid-template-columns: 1fr;
         justify-content: center;
+        justify-items: auto;
         gap: 11px;
         padding: 19px 0 10em;
-      }
+        iframe{            
+          width: 400px;          
+          height: 232px;
+        }
+        @media screen and (max-width:460px){
+          iframe{
+            width: 298px;
+          }
+        }        
+      }         
     }
     .cel {
       position: relative;
@@ -316,9 +403,9 @@ header {
       clip-path: polygon(0 9%, 100% 0%, 100% 100%, 0 100%);
       .info-novedades {
         align-self: center;
-        @include info();
+        @include info(16px);
         h1 {
-          @include titulos(#ffffff);
+          @include titulos(#ffffff,36px);
           text-align: center;
         }
       }
@@ -335,5 +422,12 @@ header {
         justify-content: space-evenly;
       }
     }
+    .btn-podcast {
+      width: 100%;
+      height: 48px;
+      margin-top: 36px;     
+      height: 48px;      
+    }
   }
+  
 }

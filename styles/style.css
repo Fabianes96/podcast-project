@@ -7,14 +7,6 @@ body {
   font-family: "IBM Plex Sans", sans-serif;
 }
 
-h1 {
-  font-size: 36px;
-  color: #060a24;
-  letter-spacing: 0;
-  line-height: 42px;
-  font-weight: normal;
-}
-
 h2 {
   font-size: 24px;
   color: #060a24;
@@ -96,7 +88,128 @@ header .menu nav ul li:hover a {
   text-decoration: line-through;
 }
 
-@media screen and (max-width: 750px) {
+main .initial {
+  position: relative;
+  top: 150px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  position: relative;
+  padding-left: 200px;
+  padding-right: 1rem;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: start;
+}
+
+main .initial .titles {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .initial .titles del {
+  padding-right: 1rem;
+}
+
+main .initial .titles h1 {
+  font-size: 64px;
+  color: #060a24;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: normal;
+}
+
+main .initial .titles h1 span {
+  color: #0000ec;
+}
+
+@media screen and (max-width: 960px) {
+  main .initial .titles {
+    display: block;
+  }
+}
+
+main .initial #parrafoMobile {
+  display: none;
+}
+
+main .initial #parrafoDesktop {
+  display: block;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+main .initial #parrafoDesktop span {
+  display: block;
+}
+
+main .btn-podcast {
+  margin-top: 56px;
+  width: 226px;
+  height: 56px;
+  font-family: "IBMPlexMono-Medium", monospace;
+  color: #060a24 100%;
+  height: 56px;
+  background: #00f3bb 100%;
+  border: 0;
+}
+
+main .btn-podcast:hover {
+  background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
+  color: #ffffff;
+  cursor: pointer;
+}
+
+main .podcasts {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  top: 150px;
+  width: 100%;
+  height: 1042px;
+  background-image: linear-gradient(225deg, #0000ff 0%, #0000a3 100%);
+  -webkit-clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 13%);
+          clip-path: polygon(100% 0, 100% 87%, 0 100%, 0 13%);
+}
+
+main .podcasts h1 {
+  font-size: 48px;
+  color: #ffffff;
+  letter-spacing: 0;
+  line-height: 42px;
+  font-weight: normal;
+  padding-left: 200px;
+  margin-bottom: 26px;
+}
+
+main .podcasts .iframes {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[2];
+      grid-template-columns: repeat(2, 1fr);
+  gap: 5em;
+  justify-items: center;
+  padding: 0 100px 0 100px;
+}
+
+main .podcasts .iframes iframe {
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
   header {
     width: 100%;
     height: 44px;
@@ -147,6 +260,7 @@ header .menu nav ul li:hover a {
     color: #ffffff;
     font-family: "IBMPlexMono", monospace;
     font-size: 16px;
+    padding-left: 0;
   }
   header .menu nav ul li:target a {
     text-decoration: none;
@@ -200,6 +314,10 @@ header .menu nav ul li:hover a {
     margin-bottom: 3px;
   }
   main .initial {
+    left: 0;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -212,18 +330,21 @@ header .menu nav ul li:hover a {
     padding-right: 1rem;
     top: 29px;
   }
-  main .btn-podcast {
-    margin-top: 36px;
-    font-family: "IBMPlexMono-Medium", monospace;
-    color: #060a24 100%;
-    height: 48px;
-    background: #00f3bb 100%;
-    border: 0;
+  main .initial .titles h1 {
+    font-size: 36px;
+    color: #060a24;
+    letter-spacing: 0;
+    line-height: 42px;
+    font-weight: normal;
   }
-  main .btn-podcast:hover {
-    background-image: linear-gradient(225deg, #0000fe 0%, #00f0b8 100%);
-    color: #ffffff;
-    cursor: pointer;
+  main .initial .titles h1 span {
+    color: inherit;
+  }
+  main .initial #parrafoMobile {
+    display: block;
+  }
+  main .initial #parrafoDesktop {
+    display: none;
   }
   main .podcasts {
     position: relative;
@@ -235,16 +356,31 @@ header .menu nav ul li:hover a {
   main .podcasts h1 {
     color: #ffffff;
     padding: 70px 16px 19px;
+    margin-left: 0px;
   }
   main .podcasts .iframes {
-    display: -ms-grid;
-    display: grid;
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
+    justify-items: auto;
     gap: 11px;
     padding: 19px 0 10em;
   }
+  main .podcasts .iframes iframe {
+    width: 400px;
+    height: 232px;
+  }
+}
+
+@media screen and (max-width: 768px) and (max-width: 460px) {
+  main .podcasts .iframes iframe {
+    width: 298px;
+  }
+}
+
+@media screen and (max-width: 768px) {
   main .cel {
     position: relative;
     display: -webkit-box;
@@ -339,6 +475,12 @@ header .menu nav ul li:hover a {
     -webkit-box-pack: space-evenly;
         -ms-flex-pack: space-evenly;
             justify-content: space-evenly;
+  }
+  main .btn-podcast {
+    width: 100%;
+    height: 48px;
+    margin-top: 36px;
+    height: 48px;
   }
 }
 /*# sourceMappingURL=style.css.map */
