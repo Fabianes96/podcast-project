@@ -215,6 +215,7 @@ main{
     }
   }  
   .invitados{
+    margin-bottom: 64px;
     h1{
       @include titulos(rgba(6,10,36,1), 48px);
       width: 481px;
@@ -230,11 +231,30 @@ main{
         height: auto;        
       }
     }
-
+  }
+  .temas{
+    h1{
+      @include titulos(rgba(6,10,36,1), 48px);
+      width: 586px;
+      position: relative;
+      left: 200px;
+      margin-bottom: 56px;
+    }
+    .iconos{
+      display: grid;
+      justify-content: center;
+      grid-template-columns: repeat(4, 220px);
+      grid-template-rows: 130px 64px;
+      justify-items: center;
+      align-items: center;
+      & :nth-child(2n){
+        order: 1;
+      }      
+    }
   }
 }
 
-@media screen and (max-width: 775px) {
+@media screen and (max-width: 850px) {
   header {
     //Se define el tamaño de la cabecera
     width: 100%;
@@ -435,6 +455,7 @@ main{
     }    
     .invitados {
       h1 {
+        width: auto;
         font-size: 36px;
         padding-left: 16px;
         margin: 54px 0 14px 0;
@@ -445,19 +466,23 @@ main{
         img {          
           display: flex;          
         }
-      }
-      
+      }      
     }
     .temas {
       h1 {
+        width: auto;
+        font-size: 36px;                
+        position: static;
         padding-left: 16px;
-        margin: 48px 0 48px 0;
+        margin: 48px 0 24px 0;
       }
       .iconos {
         display: grid;
         justify-items: center;
+        grid-template-columns: 1fr;        
         & h2:nth-child(2n) {
-          width: 100%;
+          order: 0;
+          width: auto;
           margin: 13px 0 50px 0;
         }
       }
