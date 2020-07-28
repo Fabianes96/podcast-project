@@ -28,7 +28,7 @@ p {
   width: 226px;
   height: 56px;
   font-family: "IBMPlexMono-Medium", monospace;
-  color: #060a24 100%;
+  color: #060a24;
   height: 56px;
   background: #00f3bb;
   border: 0;
@@ -130,7 +130,7 @@ main .initial .titles {
 }
 
 main .initial .titles del {
-  padding-right: 1rem;
+  padding: 0 1rem;
 }
 
 main .initial .titles h1 {
@@ -199,8 +199,8 @@ main .podcasts h1 {
 main .podcasts .iframes {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[2];
-      grid-template-columns: repeat(2, 1fr);
+  -ms-grid-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr;
   gap: 4em;
   justify-items: center;
   position: relative;
@@ -211,6 +211,7 @@ main .podcasts .iframes {
 main .podcasts .iframes iframe {
   width: 100%;
   border: 0;
+  background-color: transparent;
 }
 
 main .intermedio {
@@ -275,8 +276,8 @@ main .invitados h1 {
 main .invitados .imagenes {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
 }
 
 main .invitados .imagenes img {
@@ -302,8 +303,8 @@ main .temas .iconos {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -ms-grid-columns: (220px)[4];
-      grid-template-columns: repeat(4, 220px);
+  -ms-grid-columns: 220px 220px 220px 220px;
+      grid-template-columns: 220px 220px 220px 220px;
   -ms-grid-rows: 130px 64px;
       grid-template-rows: 130px 64px;
   justify-items: center;
@@ -536,6 +537,9 @@ main footer .iconos-footer a {
     padding-right: 1rem;
     top: 29px;
   }
+  main .initial .titles del {
+    padding: 0 0.5rem;
+  }
   main .initial .titles h1 {
     font-size: 36px;
     color: #060a24;
@@ -572,7 +576,6 @@ main footer .iconos-footer a {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    justify-items: auto;
     gap: 11px;
     padding: 19px 0 10em;
     bottom: 0;

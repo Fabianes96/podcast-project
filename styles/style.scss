@@ -44,7 +44,7 @@ p {
   width: 226px;
   height: 56px;
   font-family: "IBMPlexMono-Medium", monospace;
-  color: #060a24 100%;
+  color: #060a24;
   height: 56px;
   background: rgba(0, 243, 187, 1);
   border: 0;
@@ -118,7 +118,7 @@ main {
       display: flex;
       del {
         //Separa los dos h1
-        padding-right: 1rem;
+        padding: 0 1rem;
       }
       h1 {
         @include titulos(rgba(6, 10, 36, 1), 64px);
@@ -167,7 +167,7 @@ main {
     .iframes {
       //CSS grid para el contenedor de los iframes
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: 1fr 1fr;
       gap: 4em;
       justify-items: center;
       position: relative;
@@ -176,6 +176,7 @@ main {
       iframe {
         width: 100%;
         border: 0;
+        background-color: transparent;
       }
     }
   }
@@ -222,7 +223,7 @@ main {
     .imagenes {
       //CSS grid para las imagenes
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: 1fr 1fr 1fr;
       img {
         width: 100%;
         height: auto;
@@ -241,7 +242,7 @@ main {
       //CSS grid para los iconos y su información
       display: grid;
       justify-content: center;
-      grid-template-columns: repeat(4, 220px);
+      grid-template-columns: 220px 220px 220px 220px;
       grid-template-rows: 130px 64px;
       justify-items: center;
       align-items: center;
@@ -441,6 +442,9 @@ main {
       @include info(16px);
       top: 29px;
       .titles {
+        del {
+          padding: 0 0.5rem;
+        }
         h1 {
           @include titulos(rgba(6, 10, 36, 1), 36px);
           span {
@@ -477,7 +481,6 @@ main {
         //Solo se necesita una columna
         grid-template-columns: 1fr;
         justify-content: center;
-        justify-items: auto;
         gap: 11px;
         padding: 19px 0 10em;
         bottom: 0;
