@@ -33,16 +33,18 @@
         <nav>
           <!-- Items de navegación -->
           <ul>
-            <li class="target" id="episodios">
-              <a href="#episodios">EPISODIOS</a>
+            <li class="target">
+              <a href="#podcast">EPISODIOS</a>
             </li>
             <li class="target" id="nosotros">
-              <a href="#nosotros">NOSOTROS</a>
+              <a href="#aboutus">NOSOTROS</a>
             </li>
             <li class="target" id="entrevistas">
-              <a href="#entrevistas">ENTREVISTAS</a>
+              <a href="#interviews">ENTREVISTAS</a>
             </li>
-            <li class="target" id="topicos"><a href="#topicos">TÓPICOS</a></li>
+            <li class="target">
+              <a href="#topics">TÓPICOS</a>
+            </li>
           </ul>
         </nav>
       </div>
@@ -69,14 +71,13 @@
         <button class="btn-podcast">CONOCÉ MÁS</button>
       </section>
       <!-- Sección de podcast -->
-      <section class="podcasts">
+      <section class="podcasts" id="podcast">
         <h1>Episodios</h1>
         <div class="iframes">
           <iframe
             src="https://open.spotify.com/embed-podcast/show/2ySVrxGkN6n6frMTo9Nsrt"
             width="298"
             height="232"
-            frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
           ></iframe>
@@ -84,7 +85,6 @@
             src="https://open.spotify.com/embed-podcast/show/4kYCRYJ3yK5DQbP5tbfZby"
             width="298"
             height="232"
-            frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
           ></iframe>
@@ -92,7 +92,6 @@
             src="https://open.spotify.com/embed-podcast/show/5JxcIaIkN8zx3Zy7yD9snv"
             width="298"
             height="232"
-            frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
           ></iframe>
@@ -100,7 +99,6 @@
             src="https://open.spotify.com/embed-podcast/show/2Iibd5A6R7mxkCm4NwNmUn"
             width="298"
             height="232"
-            frameborder="0"
             allowtransparency="true"
             allow="encrypted-media"
           ></iframe>
@@ -112,7 +110,7 @@
           <img src="images/phone.png" alt="phone" />
         </div>
         <!-- Sección "de dónde venimos" -->
-        <div class="ddv">
+        <div class="ddv" id="aboutus">
           <h1>De dónde venimos</h1>
           <p>
             Our posturings, our imagined self-importance, the delusion that we
@@ -126,24 +124,26 @@
           </p>
         </div>
       </section>
-      <section class="invitados">
+      <!-- Sección de invitados -->
+      <section class="invitados" id="interviews">
         <h1>Invitadas/os estelares</h1>
         <div class="imagenes">
           <img src="images/grace-hopper.png" alt="Grace Hopper" />
           <img src="images/Katie-Bouman.png" alt="Katie Bouman" />
           <img src="images/Margaret_Hamilton.png" alt="Margaret Hamilton" />
           <img
-            src="images/An E.R.A.Univac 1103 computer in the 1950s.png"
+            src="images/An-E.R.A.Univac-1103-computer-in-the-1950s.png"
             alt="computer"
           />
           <img
-            src="images/Computer operators with an Eniac — the world’s first programmable general-purpose computer.png"
+            src="images/Computer-operators-with-an-Eniac—the-world’s-first-programmable-general-purpose-computer.png"
             alt="ENIAC"
           />
           <img src="images/susan-kare.png" alt="Susan Kare" />
         </div>
       </section>
-      <section class="temas">
+      <!-- Sección temas -->
+      <section class="temas" id="topics">
         <h1>Algunos de nuestros temas</h1>
         <div class="iconos">
           <img src="images/icon1.svg" alt="Icono 1" />
@@ -156,6 +156,7 @@
           <h2>Seguridad informática</h2>
         </div>
       </section>
+      <!-- Sección novedades -->
       <section class="novedades">
         <div class="info-novedades">
           <h1>
@@ -164,14 +165,25 @@
           <button class="btn-podcast">ESCUCHÁ LOS EPISODIOS</button>
         </div>
       </section>
+      <!-- Footer -->
       <footer>
         <p>&copy; 2019— Hello blue pale dot</p>
         <div class="iconos-footer">
-          <i class="fab fa-spotify"></i>
-          <i class="fab fa-instagram"></i>
-          <i class="fab fa-twitter"></i>
-          <i class="fab fa-facebook"></i>
-          <i class="fab fa-telegram"></i>
+          <a href="https://spotify.com" target="_blank"
+            ><i class="fab fa-spotify"></i
+          ></a>
+          <a href="https://instagram.com" target="_blank"
+            ><i class="fab fa-instagram"></i
+          ></a>
+          <a href="https://twitter.com" target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+          <a href="https://facebook.com" target="_blank"
+            ><i class="fab fa-facebook"></i
+          ></a>
+          <a href="https://web.telegram.org/" target="_blank"
+            ><i class="fab fa-telegram"></i
+          ></a>
         </div>
       </footer>
     </main>
