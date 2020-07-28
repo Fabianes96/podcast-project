@@ -100,7 +100,7 @@ header .menu nav ul li a:hover {
   text-decoration: line-through;
 }
 
-header .menu nav ul li:target a {
+header .menu nav ul li a:active {
   color: rgba(6, 10, 36, 0.56);
   text-decoration: line-through;
 }
@@ -446,7 +446,7 @@ main footer .iconos-footer a {
     color: #ffffff;
     text-decoration: none;
   }
-  header .menu nav ul li:target a {
+  header .menu nav ul li a:active {
     color: #ffffff;
     text-decoration: none;
   }

@@ -97,10 +97,8 @@ header {
             color: #00f3bb;
             text-decoration: line-through;
           }
-        }
-        //Target es útil para indicar el link activo
-        li:target {
-          a {
+          //Link activo
+          a:active {
             color: rgba(6, 10, 36, 0.56);
             text-decoration: line-through;
           }
@@ -291,8 +289,7 @@ main {
       margin-top: 0;
     }
     .iconos-footer {
-      a{
-        
+      a {
         color: black;
       }
       //Flexbox para los iconos
@@ -353,9 +350,7 @@ main {
               color: #ffffff;
               text-decoration: none;
             }
-          }
-          li:target {
-            a {
+            a:active {
               color: #ffffff;
               text-decoration: none;
             }
